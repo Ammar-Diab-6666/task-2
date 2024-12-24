@@ -1,0 +1,82 @@
+/* golbal rouls */
+body {
+  font-family: "Tajawal";
+}
+:root {
+  --font-size: 20px;
+  --pages-pading: 60px;
+  --blur-gray: rgb(133, 133, 133);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets (landscape) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 15px;
+  }
+}
+
+/* Tablets (portrait) and small desktops */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 5px;
+  }
+}
+
+.pag-pading {
+  padding-top: var(--pages-pading);
+  padding-bottom: var(--pages-pading);
+}
+/* header */
+
+.header .container {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .container h1 {
+  font-size: 50px;
+  margin: 0px;
+}
+/* landing pag */
+.landing-pag {
+  height: calc(100vh - 100px);
+}
+.landing-pag .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.landing-pag .container .media {
+  width: 500px;
+  height: 300px;
+  background-color: #e6e5e5;
+}
+.upload-div {
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+#file {
+}

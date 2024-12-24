@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>upload</title>
+    <script src="js/js.js"></script>
+    <!-- normalize file calling -->
+    <link rel="stylesheet" href="css/normalizer.css" />
+    <!-- call ffont awsowm -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- call the main css sheet -->
+    <link rel="stylesheet" href="css/task-2.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <h1>upload</h1>
+      </div>
+    </div>
+
+    <div class="landing-pag">
+      <div class="container">
+        <div class="upload-div">
+          <input type="file" id="file" />
+        </div>
+        <div id="media"></div>
+      </div>
+    </div>
+    <script>
+      let fileinput = document.getElementById("file");
+
+      let privew1 = document.getElementById("media");
+      console.log(buttun1);
+      fileinput.addEventListener("change", function () {
+        const fr = new FileReader();
+        const fileis = fileinput.files[0];
+        fr.readAsDataURL(fileinput.files[0]);
+        fr.addEventListener("load", () => {
+          const url = fr.result;
+          console.log(fileis.type);
+          privew1.innerHTML = "";
+          //if++++++++++++++++++
+          if (fileis.type.startsWith("image/")) {
+            console.log(fileis.type);
+            const img = new Image();
+            img.src = url;
+            img.width = 400;
+            privew1.appendChild(img);
+          }
+          // else++++++++++++++++++++
+          else if (fileis.type.startsWith("video/")) {
+            var video = document.createElement("video");
+            video.src = url;
+            video.autoplay = true;
+            privew1.appendChild(video);
+          } else if (fileis.type.startsWith("audio/")) {
+            const audio = document.createElement("audio");
+            audio.src = url;
+            audio.controls = true;
+
+            privew1.appendChild(audio);
+          }
+        });
+        // window.alert("sometext");
+      });
+    </script>
+  </body>
+</html>
